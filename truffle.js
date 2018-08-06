@@ -1,18 +1,27 @@
-/*
- * NB: since truffle-hdwallet-provider 0.0.5 you must wrap HDWallet providers in a 
- * function when declaring them. Failure to do so will cause commands to hang. ex:
- * ```
- * mainnet: {
- *     provider: function() { 
- *       return new HDWalletProvider(mnemonic, 'https://mainnet.infura.io/<infura-key>') 
- *     },
- *     network_id: '1',
- *     gas: 4500000,
- *     gasPrice: 10000000000,
- *   },
- */
+var DEFAULT_TESTRPC_HOST = "localhost";
+var DEFAULT_TESTRPC_PORT = 8545;
+var TESTRPC_HOST         = (process.env.TESTRPC_HOST || DEFAULT_TESTRPC_HOST);
+var TESTRPC_PORT         = (process.env.TESTRPC_PORT || DEFAULT_TESTRPC_PORT);
+
+console.log("Truffle using network at " + TESTRPC_HOST + ":" + TESTRPC_PORT);
+
+require('babel-polyfill')
 
 module.exports = {
-  // See <http://truffleframework.com/docs/advanced/configuration>
-  // to customize your Truffle configuration!
+    networks: {
+        development: {
+            host:       TESTRPC_HOST,
+            port:       TESTRPC_PORT,
+            network_id: "*", // Match any network id
+            gas:        4600000
+        }
+    },
+    description: "A multisig Ethereum address with spending authorized by Trezors and Nano Ledgers.",
+    keywords: [
+        "ethereum",
+        "multisig",
+        "trezor",
+        "ledgers"
+    ],
+    license: "MIT"
 };

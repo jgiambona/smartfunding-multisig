@@ -1,17 +1,39 @@
 {
-  "name": "smartfunding-multisig",
+  "name": "ethereum-multisig",
   "version": "1.0.0",
-  "description": "",
-  "main": "truffle-config.js",
+  "description": "2/3-multisig hardware-backed cold wallet.",
+  "main": "truffle.js",
   "directories": {
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "make test"
   },
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "ethereum",
+    "solidity",
+    "multisig",
+    "trezor"
+  ],
   "devDependencies": {
-    "truffle": "^4.1.13"
+    "babel-polyfill": "^6.26.0",
+    "bootstrap": "^4.0.0",
+    "browserify": "^15.2.0",
+    "ethereumjs-testrpc": "^4.1.3",
+    "ethereumjs-wallet": "^0.6.0",
+    "font-awesome": "^4.7.0",
+    "highlightjs": "^9.10.0",
+    "highlightjs-solidity": "^1.0.5",
+    "jquery": "^3.3.1",
+    "keccak": "^1.4.0",
+    "pejs": "^0.6.5",
+    "popper.js": "^1.12.9",
+    "tether": "^1.4.3",
+    "trezor.js-node": "^6.11.3",
+    "truffle": "^4.0.6",
+    "web3": "^0.20.4"
+  },
+  "dependencies": {
+    "serve": "^6.4.1"
   }
 }
