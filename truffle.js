@@ -9,19 +9,22 @@ require('babel-polyfill')
 
 module.exports = {
     networks: {
-        development: {
-            host:       TESTRPC_HOST,
-            port:       TESTRPC_PORT,
-            network_id: "*", // Match any network id
-            gas:        4600000
-        }
+	development: {
+	    host:       TESTRPC_HOST,
+	    port:       TESTRPC_PORT,
+	    network_id: "*", // Match any network id
+	    gas:        4600000
+	}
     },
-    description: "A multisig Ethereum address with spending authorized by Trezors and Nano Ledgers.",
+    description: "A multisig Ethereum address with spending authorized by Trezors.",
+    authors: [
+	"Destry Saul <destry@unchained-capital.com>",
+	"Dhruv Bansal <dhruv@unchained-capital.com>"
+    ],
     keywords: [
-        "ethereum",
-        "multisig",
-        "trezor",
-        "ledgers"
+	"ethereum",
+	"multisig",
+	"trezor"
     ],
     license: "MIT"
 };
